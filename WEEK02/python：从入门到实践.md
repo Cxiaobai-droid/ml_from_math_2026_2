@@ -39,3 +39,41 @@ whilr True:
 	with open(r"C:/Users/48218/reasons.txt","a") as f:
 		f.write(reason+"\n")
 ```
+```python
+try:
+    with open(r"C:/Users/48218/Desktop/plan.txt") as object:
+        content=object.read()
+except FileNotFoundError:
+    print("File not found.")
+else:
+    print(len(content))
+```
+
+```python
+def count_words(filename):
+    """count the length of a file"""
+    try:
+        with open(filename) as object:
+            content=object.read()
+    except FilNotFoundError:
+        print("The file"+filename+"not found.")
+    else:
+        print(len(content.split()))
+filename="C:/Users/48218/Desktop/plan.txt"
+count_words(filename)
+```
+
+```python
+def count_words(filename):
+    """count the length of a file"""
+    try:
+        with open(filename) as object:
+            content=object.read()
+    except FilNotFoundError:
+        print("The file"+filename+"not found.")
+    else:
+        print(len(content.split()))
+filename=["C:/Users/48218/Desktop/plan.txt","C:/Users/48218/Desktop/plan_updated_2026春.txt"]
+for file in filename:
+    count_words(file)
+```
