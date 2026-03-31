@@ -52,6 +52,19 @@ if __name__ == "__main__":
     unittest.main()
 ```
 
+MagicMock是一个实例，可以代表任何，像函数一样被调用，可以模仿类的实例，可以创建断言（见上）.可以记录日志。
+```
+from unittest.mock import MagicMock
+mock_exist = MagicMock(return_value=True)
+mock_exist("C:/users/48218/Desktop/plan.txt")
+mock_exist("C:/users/48218/Desktop/try_except.txt")
+print(mock_exist.called)
+print(mock_exist.call_count)
+print(mock_exist.call_args)
+print(mock_exist.call_args_list)
+```
 
+
+urllib包，urllib.request模块，from urllib.request import urlopen函数
 
 
