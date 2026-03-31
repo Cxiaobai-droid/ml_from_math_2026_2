@@ -9,4 +9,49 @@ unittest.mock.patch有三个作用：
   -单独使用：就是单独建一个patch(),手动控制patch.start(),手动控制patch.stop()  
 
 
+io.path是一个模块io.path.exists是函数，exist函数用来检查文件是否存在，如：  
+下面这个是普通查询，需要真实文件存在，无法控制返回值。
+```
+import os
+def exist(path)；
+  try:
+    os.stat(path)
+  except(OSError,ValueError):
+    return False
+return False
+```
+
+
+用MagicMock可以更安全的测试，直接从内存中返回，无需外部依赖，可验证参数和调用次数（assert_called_once_with）。
+```
+import os
+import unittest
+from unittest.mock import patch
+def test_exist(path):
+    try:
+        os.path.exists(path)
+    except:
+        return False
+    return True
+
+class TestFileExist(unittest.TestCase):
+    @patch("os.path.exists")
+    def test_file_exist(self,mock_exists):
+        mock_exists.return_value = True
+        result=read_config(r"C:/Users/48218/Desktop/plan.txt")
+        self.assertEqual(result,True)
+        mock_exists.assert_called_once_with("C:/Users/48218/Desktop/plan.txt")
+    
+    @patch("os.path.exists")
+    def test_file_not_exist(self,mock_exists):
+        mock_exists.return_value= False
+        result=read_config(r"C:/Users/48218/Desktop/plan.txt")
+        self.assertEqual(result,False)
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+
+
 
