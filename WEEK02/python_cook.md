@@ -3,10 +3,10 @@ unittest是一个模块，TestCase是一个类  ：unittest是标准库里的单
 unittest.mock是子模块,unittest.mocj.patch是一个函数。  
 
 
-unittest.mock.patch有三个作用：；
-  -装饰器：对一个函数用mock来对目标对象建一个虚拟对象，从而进行测试
-  -上下文管理器：也是建一个虚拟对象来进行测试，不过可以用with()控制作用域
-  -单独使用：就是单独建一个patch(),手动控制patch.start(),手动控制patch.stop()
+unittest.mock.patch有三个作用：  
+  -装饰器：对一个函数用mock来对目标对象建一个虚拟对象，从而进行测试  
+  -上下文管理器：也是建一个虚拟对象来进行测试，不过可以用with()控制作用域  
+  -单独使用：就是单独建一个patch(),手动控制patch.start(),手动控制patch.stop()  
 
 
 
