@@ -65,6 +65,10 @@ print(mock_exist.call_args_list)
 ```
 
 
-urllib包，urllib.request模块，from urllib.request import urlopen函数
+urllib包，urllib.request模块，from urllib.request import urlopen函数  
+
+unittest.mock是一个模块，MagicMock是其中工具，手动创建假对象；patch是另一个假对象，自动替换函数。  
+
+
 
 
